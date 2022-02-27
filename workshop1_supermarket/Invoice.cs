@@ -1,21 +1,18 @@
 ﻿namespace workshop1_supermarket
+    
 {
     public class Invoice : IPay
     {
-        private string _Products;
+        private decimal _Products;
 
-        public Invoice(string Products)
+        public Invoice(decimal Products)
         {
             _Products = Products;
         }
         public string AddProducts()
         {
             throw new NotImplementedException();
-        }
-        public Invoice()
-        {
-            throw new NotImplementedException();
-        }
+        }     
 
         public decimal GetValeuToPay()
         {
@@ -25,6 +22,7 @@
         public override string ToString()
         {
             return base.ToString();
+            
         }
     }
 }

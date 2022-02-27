@@ -1,24 +1,36 @@
 ﻿namespace workshop1_supermarket
-   
+
 {
     public class ComposedProduct : Product
- 
-    {
+    {       
         public float Discount { get; set; }
 
-        public int Products { get; set; }
+        public List<Product> Products { get; set; }
 
         public override decimal GetValeuToPay()
         {
-
-            throw new NotImplementedException();
+            decimal descriptions = 0;
+            decimal values = 0;
+            foreach (Product product in Products)
+            { 
+            descriptions += product.GetValeuToPay();
+            }
+            values += descriptions - (descriptions * (decimal)Discount);
+            return values;
         }
-        public override string ToString() 
+
+        private string asistent;
+        public override string ToString()
+           
         {
+            foreach (Product product in Products)
+            {
+                asistent += product.Description + ", ";
+            }
             return $"   {Id} Ancheta #1" +
-                   $"\n\tProducts...: {$"{0:C2}",13}" +
-                   $"\n\tDiscount...: {$"{Discount:P2}",15}" ;
-                  // $"\n\tvalue......: {$"{product1 + product2 + product3 + product4:C2}",13}";
+                   $"\n\tProducts...: {$"{asistent:C2}",13}" +
+                   $"\n\tDiscount...: {$"{Discount:P2}",15}";
+                   //$"\n\tvalue...:    {$"{values:C2}",15}";
 
         }
 
