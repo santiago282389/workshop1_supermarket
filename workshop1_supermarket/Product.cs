@@ -12,13 +12,11 @@
 
         public abstract decimal GetValeuToPay();
 
-
         public override string ToString()
         {
             return $"   {Id} {Description}" +
                    $"\n\tPrice......: {$"{Price:C2}",13}" +
                    $"\n\tTax........: {$"{Tax:P2}",15}";
-                   
-        }       
+        }
     }
 }

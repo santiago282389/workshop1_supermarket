@@ -32,7 +32,7 @@
   <Class Name="workshop1_supermarket.Invoice">
     <Position X="7.75" Y="1.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAMAAAIAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAMAAAIQAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Invoice.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

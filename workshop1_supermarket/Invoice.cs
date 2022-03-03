@@ -1,28 +1,36 @@
 ﻿namespace workshop1_supermarket
-    
+
 {
     public class Invoice : IPay
     {
-        private decimal _Products;
 
-        public Invoice(decimal Products)
+        private List<Product> _products = new List<Product>();
+
+        public void AddProduct(Product product)
         {
-            _Products = Products;
+            _products.Add(product);           
         }
-        public string AddProducts()
-        {
-            throw new NotImplementedException();
-        }     
 
         public decimal GetValeuToPay()
         {
-            throw new NotImplementedException();
-        }
+            decimal sum = 0;
+            foreach (Product product in _products)
+            {
+                sum += product.GetValeuToPay();
+            };
+            return sum;
+        }     
 
         public override string ToString()
         {
-            return base.ToString();
-            
+            Console.WriteLine(" RECEIPT " +
+                              "\n -------------------------------------------------");
+            foreach (Product product in _products)
+            {
+                Console.WriteLine(product.ToString());
+            }
+            return $"              ====================" +
+            $"\n TOTAL:    {$"{GetValeuToPay():C2}",23}";
         }
     }
 }
